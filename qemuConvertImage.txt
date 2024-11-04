@@ -1,0 +1,1 @@
+qemu-img.exe convert Fedora-Server-KVM-38-1.6.x86_64.qcow2 -O vhdx -o subformat=dynamic dest.vhdx

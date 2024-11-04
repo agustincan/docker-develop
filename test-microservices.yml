@@ -1,0 +1,42 @@
+version: '3.7'
+
+services:
+  # Microservice 1
+  microservice1:
+    image: your_microservice1_image:latest
+    ports:
+      - "8081:8080"
+    environment:
+      - MY_ENV_VAR=value
+
+  # Microservice 2
+  microservice2:
+    image: your_microservice2_image:latest
+    ports:
+      - "8082:8080"
+    environment:
+      - MY_OTHER_ENV_VAR=value
+
+  # Microservice 3
+  microservice3:
+    image: your_microservice3_image:latest
+    ports:
+      - "8083:8080"
+
+  # API Gateway
+  api-gateway:
+    image: your_api_gateway_image:latest
+    ports:
+      - "8080:8080"
+    environment:
+      - MICROSERVICE1_URL=http://microservice1:8080
+      - MICROSERVICE2_URL=http://microservice2:8080
+      - MICROSERVICE3_URL=http://microservice3:8080
+
+  # Web SPA Application
+  web-spa:
+    image: your_web_spa_image:latest
+    ports:
+      - "80:80"
+    environment:
+      - API_GATEWAY_URL=http://api-gateway:8080

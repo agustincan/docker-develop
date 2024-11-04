@@ -1,0 +1,7 @@
+version: '3.3'
+
+services:
+  portainer:
+    image: portainer/portainer-ce
+volumes:
+  portainer_data:C:\docker_vols

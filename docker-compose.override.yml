@@ -1,0 +1,12 @@
+version: "3.3"
+
+services:
+  portainer:
+    container_name: portainer
+    restart: always
+    ports:
+      - "8080:8000"
+      - "9000:9000"
+volumes:
+  - C:\docker_vols:/var/run/docker.sock
+  - portainer_data:/data
